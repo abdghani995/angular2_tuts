@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="bower_components/rxjs/dist/rx.all.js"></script>
+        <script>
+            var values = [];
+            var observable = new Rx.Observable.ofArrayChanges(values);
+
+            observable.subscribe((res) => {
+                console.log(res.object(res.index));
+            });
+            
+            setInterval(()=>{
+                values.push(values.length+1);
+            },1000)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
